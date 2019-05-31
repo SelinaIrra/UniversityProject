@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="import" id="link" href="./faculty.html">
+    <title>ДКШ</title>
+    <script>
+        var link = document.querySelector('link[rel=import]');
+        var content = link.import.querySelector('#faculty');
+        var el = document.getElementsByClassName('main-container-facults');
+        el.appendChild(content.cloneNode(true));
+    </script>
+</head>
+<body>
+<div style="width: 100%;">
+    <header class="header">
+        <div class="header__left">Саратовский государственный технический университет именни Гагарина Ю.А.</div>
+        <div class="header__right">
+            <a href="https://www.instagram.com/digital_school/"><img class="header__icon" src="./icon/inst.png"
+                                                                     alt="Inst"></a>
+            <a href="https://vk.com/digitalschool"><img class="header__icon" src="./icon/vk.png" alt="vk"></a>
+            <a href="https://www.facebook.com/groups/digital.school.sstu/"><img class="header__icon"
+                                                                                src="./icon/facebook.png"
+                                                                                alt="Facebook"></a>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="nav__left">
+            <a href="#">
+                <img class="nav__logo" src="./icon/logo.png" alt="">
+            </a>
+        </div>
+        <div class="nav__right">
+            <ul class="nav__menu">
+                <li class="menu__li"><a class="menu__link" href="index.html">Главная</a></li>
+                <li class="menu__li"><a class="menu__link" href="news.html">Новости</a></li>
+                <li class="menu__li"><a class="menu__link" href="about.html">О школе</a></li>
+                <li class="menu__li"><a class="menu__link" href="pupils.html">Школьникам</a></li>
+                <li class="menu__li"><a class="menu__link" href="parents.html">Родителям</a></li>
+                <li class="menu__li"><a class="menu__link" href="schools.html">Школам</a></li>
+                <li class="menu__li"><a class="menu__link" href="gallery.html">Галерея</a></li>
+                <li class="menu__li"><a class="menu__link" href="contacts.html">Контакты</a></li>
+            </ul>
+            <div class="nav__search">
+                <label class="search__label">
+                    <input type="search" class="search__input" placeholder="Поиск">
+                </label>
+            </div>
+        </div>
+    </nav>
+    <div class="slide__mini">
+        <div class="slide__caption">
+            <h1>Детская компьютерная школа</h1>
+        </div>
+        <div class="slide__right">
+            <div class="slide__img"></div>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <div class="school_title">
+        <p>О школе</p>
+        <div>
+            <a href="./docs/timesheet.pdf" target="_blank">Расписание занятий</a>
+            <a href="#">Преподаватели</a>
+            <a href="#">Отзывы учащихся и родителей</a>
+            <a href="#">Наши достижения и награды</a>
+            <a href="#">Видео</a>
+        </div>
+    </div>
+    <span>
+            <p>
+                Детская компьютерная школа (ДКШ) входит в структуру Института прикладных информационных технологий и коммуникаций Саратовского государственного технического университета имени Гагарина Ю.А. ДКШ осуществляет свою деятельность в рамках реализации научно-образовательного центра СГТУ "ТехнариУМ» по программе развития опорного университета и является одним из ведущих детских образовательных центров страны. Мы обучаем школьников современным информационным технологиям, уделяя при этом особое внимание развитию творческих способностей детей.
+            </p>
+            <p>
+                Школа начала свою работу в 2000 году. За годы  ее существования обучение прошли тысячи  саратовских ребят. Многие наши ученики стали призерами региональных, всероссийских и международных конкурсов по информационным технологиям, олимпиад по информатике. Большинство  выпускников школы успешно  поступают в технические  вузы РФ, по окончании которых устраиваются на высокооплачиваемую работу. Среди наших бывших учеников  -  известные в профессиональной IT-сфере  программисты, веб-дизайнеры, специалисты по компьютерной анимации, 3D-моделированию.
+            </p>
+            <p>
+                Обучение проводят  лучшие преподаватели СГТУ,  чей опыт подтвержден международными сертификатами Microsoft, Autodesk, Hewlett-Packard, Cisco, Aptech, Arena Multimedia.  Учебный процесс проходит с использованием самых современных информационных технологий.
+            </p>
+            <p>
+                Возраст учащихся от 7 до 17 лет.
+            </p>
+        </span>
+    <div class="school_title">
+        <p>Направления обучения: </p>
+    </div>
+</div>
+<div class="main-container-facults">
+    <div class="facults" id="faculty">
+        <div class="school__block">
+            <div class="school">
+                <img class="school__icon" src="./icon/1.png" alt="">
+                <span class="school__text"> <a href="faculty/schoolInfTech.html"> Школа информационных технологий </a> </span>
+            </div>
+            <div class="school__add__block">
+                <ul>
+                    <li><a href="#"> Эффективная презентация </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="school__block">
+            <div class="school">
+                <img class="school__icon" src="./icon/2.png" alt="">
+                <span class="school__text"> <a
+                        href="faculty/schoolCompGraph.html"> Школа компьютерной графики </a> </span>
+            </div>
+            <div class="school__add__block">
+                <ul>
+                    <li><a href="#"> Основы компьютерной графики </a></li>
+                    <li><a href="#"> Основы моделирования в 3Ds Max </a></li>
+                    <li><a href="#"> Персонажная графика в 3Ds Max </a></li>
+                    <li><a href="#"> Живопись и цифровая графика </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="school__block">
+            <div class="school">
+                <img class="school__icon" src="./icon/3.png" alt="">
+                <span class="school__text"> <a
+                        href="faculty/schoolInternet.html"> Школа интернет-технологий </a> </span>
+            </div>
+            <div class="school__add__block">
+                <ul>
+                    <li><a href="#"> Технологии веб-дизайна </a></li>
+                    <li><a href="#"> Разработка мобильных приложений </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="school__block">
+            <div class="school">
+                <img class="school__icon" src="./icon/4.png" alt="">
+                <span class="school__text"> <a href="faculty/schoolProg.html"> Школа программирования </a> </span>
+            </div>
+            <div class="school__add__block">
+                <ul>
+                    <li><a href="#"> Программирование Lego-роботов </a></li>
+                    <li><a href="#"> Программирование Arduino-роботов </a></li>
+                    <li><a href="#"> Основы программирования на языке Python </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="school__block">
+            <div class="school">
+                <img class="school__icon" src="./icon/5.png" alt="">
+                <span class="school__text"> <a href="faculty/schoolMedia.html"> Школа телевидения и цифровх медиа </a> </span>
+            </div>
+            <div class="school__add__block">
+                <ul>
+                    <li><a href="#"> Я блогер </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="school">
+            <img class="school__icon" src="./icon/6.png" alt="">
+            <span class="school__text"> <a
+                    href="faculty/schoolGame.html"> Школа разработки компьютерных игр </a> </span>
+        </div>
+        <div class="school">
+            <img class="school__icon" src="./icon/7.png" alt="">
+            <span class="school__text"> <a href="faculty/schoolNetwork.html"> Школа сетевых технологий </a> </span>
+        </div>
+        <div class="school">
+            <img class="school__icon" src="./icon/8.png" alt="">
+            <span class="school__text"> <a href="faculty/schoolInfTech.schoolSecurity.html"> Школа информационной безопасности </a> </span>
+        </div>
+        <div class="school">
+            <img class="school__icon" src="./icon/9.png" alt="">
+            <span class="school__text"> <a href="faculty/schoolDesign.html"> Школа рекламы и дизайна </a> </span>
+        </div>
+        <div class="school__block">
+            <div class="school">
+                <img class="school__icon" src="./icon/10.png" alt="">
+                <span class="school__text"> <a
+                        href="faculty/schoolArt.html"> Детская школа искусств ИНПИТ СГТУ </a> </span>
+            </div>
+            <div class="school__add__block">
+                <ul>
+                    <li><a href="#"> Живопись и цифровая графика </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+        <span>
+            <p> Обучение проходит в будние дни или по воскресеньям  в главном корпусе СГТУ (ул. Политехническая, 77).</p>
+            <p> С 2002 года Детская компьютерная школа совместно с Институтом прикладных информационных технологий и коммуникаций являются организаторами  Международного конкурса компьютерных работ среди детей, юношества и студенческой молодежи «Цифровой ветер».  Цель конкурса - привлечение школьников и студентов к современным информационным технологиям.  На конкурс ежегодно присылаются тысячи работ со всего мира. </p>
+        </span>
+</div>
+<div class="content-director">
+    <div class="main-container director">
+        <div class="director__left">
+            <img class="director__image" src="./icon/woman.png" alt="">
+            <h2 class="director__caption">Директор ИНПИТ</h2>
+            <h1 class="director__title">Долина Ольга Николаевна</h1>
+        </div>
+        <div class="director__right">
+            Сегодня информационные технологии (ИТ) являются современной, быстро развивающейся сферой бизнеса, и многие
+            родители хотели бы, чтобы дети уже с ранних лет владели современными компьютерными технологиям, и, возможно,
+            выбрали себе будущую профессию в этой области, тем более, что практически каждый может выбрать себе область
+            ИТ по душе и по способностям: это и программирование, интернет-технологии, мобильные решения, компьютерные
+            сети, а также целый спектр цифровых искусств, включая трехмерную анимацию и дополненную реальность. На наш
+            взгляд, очень важно не только научить ребенка использовать компьютер для создания самых разнообразных
+            приложений, но и определиться с выбором будущей профессии, ведь информационный бизнес это бизнес молодых,
+            активных профессионалов. Чтобы помочь школьникам не только освоить самые современные технологии, но и решить
+            одну из самых главных проблем - кем стать? Институт прикладных информационных технологий и коммуникаций
+            создал Детскую компьютерную школу. Нашими выпускниками являются более 5000 школьников из Саратова и области,
+            большинство уже реализовали себя в успешной профессиональной карьере ИТ-специалиста, а кому-то знания,
+            полученные в нашей школе, помогли стать лучшим в другой выбранной профессии.
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer__left">
+        <div class="footer__info">Тел.: 8 (8452) 99-87-34</div>
+        <div class="footer__info">Email.: digital-school.sstu@ya.ru</div>
+    </div>
+    <div class="footer__right">
+        <div class="footer__info">410054, Саратов,<br/>ул. Политехническая, д. 77</div>
+        <button class="contrast">Версия для<br/>слабовидящих</button>
+    </div>
+</footer>
+</body>
+</html>

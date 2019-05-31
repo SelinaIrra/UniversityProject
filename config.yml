@@ -1,0 +1,11 @@
+mail:
+  host: host
+  port: port
+  username: username
+  password: password
+  manager_email: mail
+
+database:
+  host: mongo
+  port: 27017
+  database: "school"
