@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
     params.count = params.count ? Number(params.count) : 10;
     params.offset = params.offset ? Number(params.offset) : 0;
     if (!(params.count > 0 && params.offset >= 0)) {
-        return res.status(400).json();
+        return res.status(400).json({});
     }
     NEWS.find({}, null, {
         sort: '-date',
@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
     }, (err, arr) => {
         if (err) {
             console.error(err);
-            res.status(500).json();
+            res.status(500).json({});
             return;
         }
         res.json({
@@ -39,9 +39,9 @@ router.get('/:id', function (req, res, next) {
     NEWS.findById(req.params.id, (err, single_new) => {
         if (err) {
             if (err.kind === "ObjectId")
-                return res.status(204).json();
+                return res.status(204).json({});
             console.error(err);
-            return res.status(500).json();
+            return res.status(500).json({});
         }
         res.json({
             id: single_new.id,
