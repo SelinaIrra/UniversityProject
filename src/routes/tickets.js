@@ -4,7 +4,6 @@ const send_mail = require('../mail');
 const required_fields = ["name", "surname", "phone", "school", "class", "faculty"];
 const router = express.Router();
 
-/* GET users listing. */
 function validate(object) {
     return required_fields.every(x => object[x]) && String(object.phone).length === 11 && Number(object.phone);
 }
