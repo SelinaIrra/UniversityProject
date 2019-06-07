@@ -1,6 +1,7 @@
 const express = require('express');
 const NEWS = require('../models/news');
 const router = express.Router();
+const check_auth = require('../utils').check_auth;
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -17,8 +18,7 @@ router.get('/', function (req, res, next) {
     }, (err, arr) => {
         if (err) {
             console.error(err);
-            res.status(500).json({});
-            return;
+            return res.status(500).json({});
         }
         res.json({
             offset: params.offset,
@@ -50,6 +50,27 @@ router.get('/:id', function (req, res, next) {
             html: single_new.html,
         });
     });
+});
+
+router.post('/', function (req, res, next) {
+    const auth_status = check_auth(req);
+    if (auth_status !== 200)
+        return res.status(auth_status).json({});
+    return res.status(500).json({error: "Not implemented"});
+});
+
+router.patch('/:id', function (req, res, next) {
+    const auth_status = check_auth(req);
+    if (auth_status !== 200)
+        return res.status(auth_status).json({});
+    return res.status(500).json({error: "Not implemented"});
+});
+
+router.delete('/:id', function (req, res, next) {
+    const auth_status = check_auth(req);
+    if (auth_status !== 200)
+        return res.status(auth_status).json({});
+    return res.status(500).json({error: "Not implemented"});
 });
 
 module.exports = router;
