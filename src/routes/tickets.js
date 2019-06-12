@@ -73,4 +73,21 @@ router.post('/', function (req, res, next) {
     }
 });
 
+router.delete('/', function (req, res) {
+    const auth_status = check_auth(req);
+    if (auth_status !== 200)
+        return res.status(auth_status).json({});
+
+    const params = req.body;
+    TICKETS.findByIdAndDelete(params.id, (err) => {
+        if (err) {
+            if (err.kind === "ObjectId")
+                return res.status(204).json({});
+            console.log(err);
+            return res.status(500).json({});
+        }
+        return res.status(204).json({});
+    });
+});
+
 module.exports = router;
