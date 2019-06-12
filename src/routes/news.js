@@ -53,9 +53,8 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    const auth_status = check_auth(req);
-    if (auth_status !== 200)
-        return res.set('WWW-Authenticate', 'Basic realm="401"').status(auth_status).json({});
+    if (!check_auth(req))
+        return res.set('WWW-Authenticate', 'Basic realm="401"').status(401).send();
 
     const params = req.body;
     NEWS.create({
@@ -80,9 +79,8 @@ router.post('/', function (req, res, next) {
 });
 
 router.patch('/:id', function (req, res, next) {
-    const auth_status = check_auth(req);
-    if (auth_status !== 200)
-        return res.status(auth_status).json({});
+    if (!check_auth(req))
+        return res.set('WWW-Authenticate', 'Basic realm="401"').status(401).send();
 
     const params = req.body;
     NEWS.findByIdAndUpdate(params.id, params, {new: true}, (err, obj) => {
@@ -102,9 +100,8 @@ router.patch('/:id', function (req, res, next) {
 });
 
 router.delete('/:id', function (req, res, next) {
-    const auth_status = check_auth(req);
-    if (auth_status !== 200)
-        return res.status(auth_status).json({});
+    if (!check_auth(req))
+        return res.set('WWW-Authenticate', 'Basic realm="401"').status(401).send();
 
     const params = req.body;
     NEWS.findByIdAndDelete(params.id, (err) => {

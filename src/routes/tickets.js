@@ -11,9 +11,8 @@ function validate(object) {
 }
 
 router.get('/', function (req, res) {
-    const auth_status = check_auth(req);
-    if (auth_status !== 200)
-        return res.set('WWW-Authenticate', 'Basic realm="401"').status(auth_status).json({});
+    if (!check_auth(req))
+        return res.set('WWW-Authenticate', 'Basic realm="401"').status(401).send();
 
     const params = req.query;
     params.count = params.count ? Number(params.count) : 10;
@@ -74,9 +73,8 @@ router.post('/', function (req, res, next) {
 });
 
 router.delete('/', function (req, res) {
-    const auth_status = check_auth(req);
-    if (auth_status !== 200)
-        return res.status(auth_status).json({});
+    if (!check_auth(req))
+        return res.set('WWW-Authenticate', 'Basic realm="401"').status(401).send();
 
     const params = req.body;
     TICKETS.findByIdAndDelete(params.id, (err) => {
