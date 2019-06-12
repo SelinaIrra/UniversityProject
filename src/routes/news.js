@@ -55,8 +55,28 @@ router.get('/:id', function (req, res, next) {
 router.post('/', function (req, res, next) {
     const auth_status = check_auth(req);
     if (auth_status !== 200)
-        return res.status(auth_status).json({});
-    return res.status(500).json({error: "Not implemented"});
+        return res.set('WWW-Authenticate', 'Basic realm="401"').status(auth_status).json({});
+
+    const params = req.body;
+    NEWS.create({
+        title: params.title,
+        image: params.image,
+        text: params.text,
+        html: params.html,
+    }, (err, obj) => {
+        if (err) {
+            console.log(err);
+            return res.status(400).json({});
+        }
+        res.json({
+            id: obj.id,
+            date: obj.date,
+            title: obj.title,
+            image: obj.image,
+            text: obj.text,
+            html: obj.html,
+        })
+    });
 });
 
 router.patch('/:id', function (req, res, next) {
