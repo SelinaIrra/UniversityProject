@@ -83,7 +83,22 @@ router.patch('/:id', function (req, res, next) {
     const auth_status = check_auth(req);
     if (auth_status !== 200)
         return res.status(auth_status).json({});
-    return res.status(500).json({error: "Not implemented"});
+
+    const params = req.body;
+    NEWS.findByIdAndUpdate(params.id, params, {new: true}, (err, obj) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).json({});
+        }
+        return res.json({
+            id: obj.id,
+            date: obj.date,
+            title: obj.title,
+            image: obj.image,
+            text: obj.text,
+            html: obj.html,
+        });
+    })
 });
 
 router.delete('/:id', function (req, res, next) {
