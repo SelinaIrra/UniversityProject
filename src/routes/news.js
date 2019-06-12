@@ -27,7 +27,7 @@ router.get('/', function (req, res, next) {
                 id: x.id,
                 title: x.title,
                 image: x.image,
-                date: x.date,
+                date: x.date.toLocaleDteString('ru-RU'),
                 text: x.text,
             }))
         });
@@ -46,7 +46,7 @@ router.get('/:id', function (req, res, next) {
         res.json({
             id: single_new.id,
             title: single_new.title,
-            date: single_new.date,
+            date: single_new.date.toLocaleDteString('ru-RU'),
             html: single_new.html,
         });
     });
@@ -69,7 +69,7 @@ router.post('/', function (req, res, next) {
         }
         res.json({
             id: obj.id,
-            date: obj.date,
+            date: obj.date.toLocaleDteString('ru-RU'),
             title: obj.title,
             image: obj.image,
             text: obj.text,
@@ -90,7 +90,7 @@ router.patch('/:id', function (req, res, next) {
         }
         return res.json({
             id: obj.id,
-            date: obj.date,
+            date: obj.date.toLocaleDteString('ru-RU'),
             title: obj.title,
             image: obj.image,
             text: obj.text,
