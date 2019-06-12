@@ -90,7 +90,17 @@ router.delete('/:id', function (req, res, next) {
     const auth_status = check_auth(req);
     if (auth_status !== 200)
         return res.status(auth_status).json({});
-    return res.status(500).json({error: "Not implemented"});
+
+    const params = req.body;
+    NEWS.findByIdAndDelete(params.id, (err) => {
+        if (err) {
+            if (err.kind === "ObjectId")
+                return res.status(204).json({});
+            console.log(err);
+            return res.status(500).json({});
+        }
+        return res.status(204).json({});
+    });
 });
 
 module.exports = router;
