@@ -48,6 +48,7 @@ router.get('/:id', function (req, res, next) {
             title: single_new.title,
             date: single_new.date,
             html: single_new.html,
+            image: single_new.image
         });
     });
 });
