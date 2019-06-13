@@ -1,0 +1,63 @@
+<div ng-controller="newsCtrl as ctrl" class="content">
+    <div style="display: flex; justify-content:space-between;">
+        <p class="contentTitle">Новости</p>
+        <div ng-click="ctrl.showBlockAddNews()" style="display: inherit;">
+            <button class="addBtn">+</button>
+            <p style="cursor: pointer;">Добавить новость</p>
+        </div>
+    </div>
+    <table class="tableInf">
+        <thead>
+            <tr>
+                <th>Заголовок</th>
+                <th>Дата</th>
+                <th>Аннотация</th>
+                <th>Изображение</th>
+                <th>Текст</th> 
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="projectInf">
+            <tr ng-repeat="data in ctrl.data">
+                <td> {{data.title}} </td>
+                <td> {{data.date}} </td>
+                <td> {{data.text}} </td>
+                <td> <img style="width: 20px; height:20px;" ng-src="{{data.image}}" alt="" ng-if="data.image"></td>
+                <td> <div class="tdHtml"> {{data.html}} </div> </td>
+                <td style="width: 22px;"> <button class="delBtn" ng-click="ctrl.deleteNews(data.id)"> x </button></td>
+                <td style="width: 22px;"> <button class="updBtn" ng-click="ctrl.showBlockUpdateNews($index)"> &#9998; </button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="modal" hidden class="block">
+        <div class="modal">
+            <div style="display: flex; justify-content:space-between;"> 
+                <p class="contentTitle"> {{ctrl.titleBlock}} </p>
+                <button title="закрыть" ng-click="ctrl.closeModal()" class="closeBtn"> x </button>
+            </div>
+            <table class="tableModal">
+                <tr>
+                    <td> Заголовок </td>
+                    <td> <input id="inTitle" type="text"> </td>
+                </tr>
+                <tr>
+                    <td> Аннотация </td>
+                    <td> <textarea id="inText" style="height: 50px;"></textarea> </td>
+                </tr>
+                <tr>
+                    <td> Текст </td>
+                    <td><textarea id="inHtml"></textarea></td>
+                </tr>
+                <tr>
+                    <td> Изображение </td>
+                    <td> 
+                        <input type="file" id="inImg" onchange="angular.element(this).scope().changeImg()">
+                        <img ng-src="{{ctrl.newsImg}}" width="30px" height="30px" ng-model="ctrl.newsImg">
+                    </td>
+                </tr>
+            </table>
+            <button class="saveBtn" ng-click="ctrl.save()"> Сохранить </button>
+        </div>
+    </div>
+</div>

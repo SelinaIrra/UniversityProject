@@ -1,0 +1,25 @@
+<div ng-controller="ticketCtrl as ctrl" class="content">
+    <p class="contentTitle">Заявки на регистрацию</p>
+    <table class="tableInf">
+        <thead>
+            <tr>
+                <th>Фамилия И.О.</th>
+                <th>Школа</th>
+                <th>Класс</th>
+                <th>Факультет</th>
+                <th>Телефон</th> 
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="projectInf">
+            <tr ng-repeat="data in ctrl.data">
+                <td> {{data.fio}} </td>
+                <td> {{data.school}} </td>
+                <td> {{data.class}} </td>
+                <td> {{data.faculty}} </td>
+                <td> {{data.phone}} </td>
+                <td> <button class="delBtn" ng-click="ctrl.deleteTicket(data.id)"> x </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
