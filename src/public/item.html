@@ -11,7 +11,7 @@
     <script src="scripts/script.js"></script>
     <title>ДКШ</title>
 </head>
-<body ng-controller="newsCtrl as ctrl">
+<body ng-controller="itemCtrl as ctrl">
 <div style="width: 100%;">
     <header class="header">
         <div class="header__left">Саратовский государственный технический университет именни Гагарина Ю.А.</div>
@@ -58,15 +58,13 @@
     </div>
 </div>
 <div class="main-container">
-    <section class="news" id="news" ng-model="ctrl.newsData"> 
-        <article class="article" ng-repeat="data in ctrl.newsData">
-            <img class="article__image" ng-src="{{data.image}}" alt="" ng-if="data.image">
-            <div class="article__info">
-                <p class="article__text">{{data.text}}</p>
-                <a class="article__details" ng-href="item.html?id={{data.id}}">Подробнее...</a>
-            </div>
-        </article>
-    </section>
+    <div style="margin: 20px 0 20px 0; width: 100%;">
+        <div style="display:flex; justify-content:space-between;width: 100%;margin-bottom: 10px;"> <h3>{{ctrl.data.title}}</h3> <p> {{ctrl.data.date}} </p></div>
+        <div style="display: flex; justify-content:space-between;width: 100%;">
+            <div ng-bind-html="ctrl.html"></div>
+            <div><img ng-src="{{ctrl.data.image}}"></div>
+        </div>
+    </div>
 </div>
 
 <footer class="footer">

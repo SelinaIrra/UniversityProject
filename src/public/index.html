@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" ng-app="appSchool">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/angularjs/angular.min.js"></script>
     <script src="scripts/script.js"></script>
     <title>ДКШ</title>
 </head>
-<body>
+<body ng-controller="mainCtrl as ctrl">
 <div style="width: 100%;">
     <header class="header">
         <div class="header__left">Саратовский государственный технический университет именни Гагарина Ю.А.</div>
@@ -167,18 +168,16 @@
             опорного университета и является одним из ведущих детских образовательных центров страны.
         </div>
     </div>
-
-    <section class="news">
-        <h1 class="news__header" style="color:#143b5a;">Последние новости</h1>
-        <article class="article">
-            <img class="article__image" src="./images/120319_2.jpg" alt="">
+    <section class="news" id="news" ng-model="ctrl.newsMiniCount"> 
+        <h1 class="news__header" style="color:#143b5a;" ng-if="ctrl.newsMiniCount">Последние новости</h1>
+        <article class="article" ng-repeat="data in ctrl.newsMini">
+            <img class="article__image" ng-src="{{data.image}}" alt="" ng-if="data.image">
             <div class="article__info">
-                <p class="article__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, deserunt
-                    ex! Itaque adipisci rem voluptatem!</p>
-                <a class="article__details" href="#">Подробнее...</a>
+                <p class="article__text">{{data.text}}</p>
+                <a class="article__details" ng-href="item.html?id={{data.id}}">Подробнее...</a>
             </div>
         </article>
-        <article class="article">
+        <!-- <article class="article">
             <img class="article__image" src="./images/040319.jpg" alt="">
             <div class="article__info">
                 <p class="article__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, deserunt
@@ -201,7 +200,7 @@
                     ex! Itaque adipisci rem voluptatem!</p>
                 <a class="article__details" href="#">Подробнее...</a>
             </div>
-        </article>
+        </article> -->
     </section>
 </div>
 <div class="wind">
@@ -242,7 +241,7 @@
                 <span class="form__text">Контактный телефон</span>
                 <input class="form__input" type="tel" pattern="[78]\([0-9]{3}\)[0-9]{7}" name="phone">
             </label>
-            <button class="form__submit" type="button" onclick="sendTicket()">Зарегистрироваться</button>
+            <button class="form__submit" type="button" ng-click="ctrl.sendTicket()">Зарегистрироваться</button>
         </form>
     </div>
 </div>
