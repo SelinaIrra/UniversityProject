@@ -98,7 +98,7 @@ router.post('/', function (req, res, next) {
     });
 });
 
-router.patch('/:id', function (req, res, next) {
+router.patch('/', function (req, res, next) {
     if (!check_auth(req))
         return res.set('WWW-Authenticate', 'Basic realm="401"').status(401).send();
 
@@ -119,7 +119,7 @@ router.patch('/:id', function (req, res, next) {
     })
 });
 
-router.delete('/:id', function (req, res, next) {
+router.delete('/', function (req, res, next) {
     if (!check_auth(req))
         return res.set('WWW-Authenticate', 'Basic realm="401"').status(401).send();
 
