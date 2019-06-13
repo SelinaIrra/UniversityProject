@@ -1,0 +1,154 @@
+
+.container {
+    width: 100%; 
+    background: #BADBAD; 
+position	: relative;
+	
+   }
+   .block1 { 
+    display: inline-block; 
+	top: 0;
+	right:0;
+    position: absolute;
+margin: 0px;
+	margin-right: 10px;	
+	padding-top : 10px;	
+}
+.block1 a{ 
+text-decoration:none;
+}
+.fora{
+	font-weight: bold; 
+    color: #FFFFFF;
+	padding: 60px; 
+	
+	font-size: 30px;
+	
+}
+.for-a{
+	display:inline-block;
+	margin-right:10px;
+	color:#FFFFFF;
+	font-size: 25px;
+	text-decoration:none;
+	padding: 20px; 
+}
+
+.stroka1 { 
+display: inline-block; 
+	top: 0;
+    float: left; 
+    position: absolute; 
+    left: 400%
+	
+}
+
+
+    
+   .logotipe {
+	   position: absolute; 
+	   width: 25%;
+	top: 0;
+	left:0	
+   }
+.center { 
+    text-align: center;
+   }
+  .phote1{
+  width: 100%;	
+	top: 0;
+		
+}
+    .zona {
+	position	: absolute;
+ text-align: center;
+	top		: 200px;
+	font: bold 44px/65px Helvetica, Sans-Serif;
+	left		: 0;
+	width		: 100%;
+	color: white;
+}
+.phote2{
+  width: 100%;	
+	
+		
+}
+.small-block{
+	width:25%;
+	min-height:800px;
+	background-color:;
+	float:left;
+	margin-right:30px;
+}
+ .block {
+	padding: 0;
+	font-size: 20px;
+	background-color:;
+	width:70%;
+	min-height:800px;
+	float:left;
+	}
+	.block .element{
+	border: solid 1px #C7CADD;
+	margin: 10px;
+	margin-left: 10px;
+	margin-right: 0px;
+	
+	
+	float: left;
+	width: 295px;
+	height: 290px;
+	box-shadow: -19px 0 22px -19px #000, 19px 0 22px -19px #000;
+	}
+.a {text-decoration: none;}	
+	
+	.block .img{
+	text-decoration: none;
+	}
+	.block .img img{
+	margin: 5px 0px 0px 5px;
+	padding: 0;
+	width: 285px;
+	
+	}
+	.block .text{
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	}
+	.registr{
+ width: 60%; 
+ border: solid 2px black;
+ margin:0 auto;
+ 
+ 
+ 
+}
+.for-form{
+	clear:both;
+	width:80%;
+	margin:0 auto;
+	border:1px solid #e6e6e6;
+	
+}
+
+.content {
+    width: 500px; /* Ширина слоя */
+    margin: 0 auto 50px; /* Выравнивание по центру */
+   }
+.footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+   
+    color: #fff; /* Цвет текста */
+    
+   }
+.bottom{
+	 background-color:#AE4A84;
+}
+
+a:-webkit-any-link{
+	color:black;
+	text-decoration: none;	
+}
