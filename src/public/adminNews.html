@@ -24,7 +24,7 @@
                 <td> {{data.date}} </td>
                 <td> {{data.text}} </td>
                 <td> <img style="width: 20px; height:20px;" ng-src="{{data.image}}" alt="" ng-if="data.image"></td>
-                <td> <div class="tdHtml"> {{data.html}} </div> </td>
+                <td style="width: 250px"> <div class="tdHtml"> {{data.html}} </div> </td>
                 <td style="width: 22px;"> <button class="delBtn" ng-click="ctrl.deleteNews(data.id)"> x </button></td>
                 <td style="width: 22px;"> <button class="updBtn" ng-click="ctrl.showBlockUpdateNews($index)"> &#9998; </button></td>
             </tr>
@@ -53,7 +53,8 @@
                     <td> Изображение </td>
                     <td> 
                         <input type="file" id="inImg" onchange="angular.element(this).scope().changeImg()">
-                        <img ng-src="{{ctrl.newsImg}}" width="30px" height="30px" ng-model="ctrl.newsImg">
+                        <img ng-src="{{ctrl.newsImg}}" id="image" width="30px" height="30px" ng-model="ctrl.newsImg">
+                        <button class="delBtn" ng-click="ctrl.deleteImg()"> x </button>
                     </td>
                 </tr>
             </table>

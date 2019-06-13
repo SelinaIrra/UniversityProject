@@ -50,6 +50,13 @@ appAdmin.controller('newsCtrl', function($scope) {
 		$('#modal').show();
 	}
 
+	ctrl.deleteImg = function() {
+		ctrl.newsImg = "";
+		$('#inImg').val('');
+		$('#image').attr('src', '');
+
+	}
+
 	$scope.changeImg = function() {
 		let img = document.getElementById('inImg').files;
 		if (img.length > 1)
@@ -62,10 +69,6 @@ appAdmin.controller('newsCtrl', function($scope) {
 			}
 			fileReader.readAsDataURL(img[0])
 		}
-		//  else {
-		// 	ctrl.newsImg = "";
-		// 	// $('#Img').attr('src', "")
-		// }
 	} 
 
 	ctrl.closeModal = function() {

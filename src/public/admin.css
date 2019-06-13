@@ -86,7 +86,7 @@ ul li:hover a{
 .tableInf tbody tr:hover { background: #f5f5f5; } 
 
 .tdHtml {
-    width: 180px;
+    width: 250px;
     height: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
