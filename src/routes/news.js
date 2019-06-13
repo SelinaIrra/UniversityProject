@@ -27,10 +27,29 @@ router.get('/', function (req, res, next) {
                 id: x.id,
                 title: x.title,
                 image: x.image,
-                date: x.date,
+                date: x.date.toLocaleDateString('ru-RU'),
                 text: x.text,
             }))
         });
+    });
+});
+
+router.get('/all', function (req, res, next) {
+    NEWS.find({}, null, {
+        sort: '-date',
+    }, (err, arr) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({});
+        }
+        res.json(arr.map(x => ({
+                id: x.id,
+                title: x.title,
+                image: x.image,
+                html: x.html,
+                date: x.date.toLocaleDateString('ru-RU'),
+                text: x.text,
+            })));
     });
 });
 
@@ -46,7 +65,7 @@ router.get('/:id', function (req, res, next) {
         res.json({
             id: single_new.id,
             title: single_new.title,
-            date: single_new.date,
+            date: single_new.date.toLocaleDateString('ru-RU'),
             html: single_new.html,
             image: single_new.image
         });
@@ -70,7 +89,7 @@ router.post('/', function (req, res, next) {
         }
         res.json({
             id: obj.id,
-            date: obj.date,
+            date: obj.date.toLocaleDateString('ru-RU'),
             title: obj.title,
             image: obj.image,
             text: obj.text,
@@ -91,7 +110,7 @@ router.patch('/:id', function (req, res, next) {
         }
         return res.json({
             id: obj.id,
-            date: obj.date,
+            date: obj.date.toLocaleDateString('ru-RU'),
             title: obj.title,
             image: obj.image,
             text: obj.text,
